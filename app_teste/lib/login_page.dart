@@ -22,6 +22,14 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+
+                Container(
+                  width: 200,
+                  height: 200,
+                  child: Image.network('https://executivalab.com.br/wp-content/uploads/2021/07/modelo-de-logomarca-simbolo-apple.png')),
+
+                  Container(height: 20 ,),
+
                 TextField(
                   onChanged: (Text) {
                     email = Text;
