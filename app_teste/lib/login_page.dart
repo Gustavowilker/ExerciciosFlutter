@@ -29,39 +29,59 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     height: 20,
                   ),
-                  TextField(
-                    onChanged: (Text) {
-                      email = Text;
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                        labelText: 'Email', border: OutlineInputBorder()),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  TextField(
-                    onChanged: (Text) {
-                      password = Text;
-                    },
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: 'Password',
-                      border: OutlineInputBorder(),
+                  Card(
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 12.0, right: 12, top: 12, bottom: 12),
+                      child: Column(
+                        children: [
+                          TextField(
+                            onChanged: (Text) {
+                              email = Text;
+                            },
+                            keyboardType: TextInputType.emailAddress,
+                            decoration: InputDecoration(
+                                labelText: 'Email',
+                                border: OutlineInputBorder()),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          TextField(
+                            onChanged: (Text) {
+                              password = Text;
+                            },
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              border: OutlineInputBorder(),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          RaisedButton(
+                            color: Color.fromARGB(255, 191, 129, 201),
+                            textColor: Colors.white,
+                            onPressed: () {
+                              if (email == "gustavo wilker" &&
+                                  password == '123') {
+                                Navigator.of(context)
+                                    .pushReplacementNamed('/home');
+                              } else {
+                                print('Login inválido');
+                              }
+                            },
+                            child: Container(
+                                width: double.infinity,
+                                child: Text(
+                                  'Entrar',
+                                  textAlign: TextAlign.center,
+                                )),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  RaisedButton(
-                    onPressed: () {
-                      if (email == "gustavo wilker" && password == '123') {
-                        Navigator.of(context).pushReplacementNamed('/home');
-                      } else {
-                        print('Login inválido');
-                      }
-                    },
-                    child: Text('Entrar'),
                   ),
                 ],
               ),
