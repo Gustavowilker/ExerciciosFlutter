@@ -1,4 +1,5 @@
 import 'package:app_teste/app_controller.dart';
+import 'package:app_teste/login_page.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -14,7 +15,11 @@ class AppWidget extends StatelessWidget {
           primarySwatch: Colors.red,
           brightness: AppController.instance.isDartTheme ? Brightness.dark : Brightness.light,
         ),
-        home: HomePage(),
+        initialRoute: '/',
+        routes: {
+          '/' :(context) => LoginPage(),
+          '/home':(context) => HomePage(),
+        },
       );
     }));
   }
